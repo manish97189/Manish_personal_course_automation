@@ -1,62 +1,84 @@
-# DTU Course Registration Automation
+# 🎓 DTU Course Registration Automation
 
 An automated tool with a visual web dashboard to grab DTU courses as soon as they become available on `exam-setu.dtu.ac.in`.
 
 ---
 
-## 🚀 Quick Start (For Anyone)
+## ⚡ Quick Start Guide
 
-No programming knowledge or IDE required! Just make sure **Python 3.9+** is installed on your computer.
+No programming experience needed. All you need on your computer is **Python 3.9 or higher** (free from [python.org](https://www.python.org/downloads/)).
 
-### 1. Download or Clone the Repository
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd "course registration automation"
-```
-*(Or simply download the ZIP from GitHub and extract it).*
+---
 
-### 2. Run the One-Click Launcher
+### 🪟 For Windows Users
 
-- **macOS / Linux:**
-  Open Terminal in the project folder and run:
-  ```bash
-  ./run.sh
-  # or
-  python3 start.py
-  ```
+#### Step 1: Download the Project
+1. Click the green **Code** button at the top of the GitHub page.
+2. Click **Download ZIP**.
+3. Extract (unzip) the folder to your Desktop or Downloads.
 
-- **Windows:**
-  Double-click `run.bat` or run in Command Prompt:
-  ```cmd
-  python start.py
-  ```
+#### Step 2: Open and Run
+1. Open the extracted folder.
+2. **Double-click `run.bat`**.
+   *(Alternatively: Open Command Prompt inside the folder and type: `python start.py`)*
 
-> 💡 **What this does automatically:**
-> 1. Sets up an isolated local environment (`venv`).
-> 2. Installs required libraries (`playwright`, `python-dotenv`).
-> 3. Installs the browser driver.
-> 4. Launches the dashboard at `http://localhost:8765` and opens it in your default browser.
+#### Step 3: That's It!
+- The script automatically creates the environment, installs needed libraries, and opens the dashboard in your default browser at `http://localhost:8765`.
+
+> ⚠️ **First time installing Python on Windows?**  
+> Make sure to check the box **"Add Python to PATH"** at the bottom of the Python installer!
+
+---
+
+### 🍏 For macOS Users
+
+#### Step 1: Download the Project
+1. Click the green **Code** button on GitHub → **Download ZIP**, then extract it.  
+   *(Or open Terminal and run `git clone <repo-url>`)*
+
+#### Step 2: Run the Launcher
+1. Open **Terminal**.
+2. Drag and drop the folder into Terminal, or navigate to it:
+   ```bash
+   cd ~/Downloads/"course registration automation"
+   ```
+3. Run this command:
+   ```bash
+   ./run.sh
+   ```
+   *(or: `python3 start.py`)*
+
+#### Step 3: That's It!
+- Your browser will automatically pop open with the control dashboard at `http://localhost:8765`.
 
 ---
 
 ## 🖥️ How to Use the Dashboard
 
-1. **Enter Your Credentials:**
-   - Type your **Student Roll Number** (e.g. `23/IT/94`).
-   - Type your **Password**.
-2. **Add Courses:**
-   - Enter Course Code (e.g. `HU306`) and Slot (e.g. `E1`).
-   - Put your most-wanted courses at the top (top = highest priority).
-   - Use the **＋ Add Course** button to add more.
-3. **Click 🚀 Start Automation:**
-   - The bot starts monitoring the registration portal.
-   - When Cloudflare shows a "Verify you are human" checkbox, switch to the Chrome browser window and click it once.
-   - The bot will automatically resume and grab your courses in real time.
-4. **Click ⏹️ Stop** anytime to finish.
+1. **Enter Your Details:**
+   - **Roll Number:** e.g., `23/IT/94`
+   - **Password:** Your DTU portal password
+2. **Set Your Target Courses:**
+   - Enter the **Course Code** (e.g., `HU306`) and **Slot** (e.g., `E1`).
+   - Courses are grabbed in order from top to bottom (highest priority at the top).
+   - Click **＋ Add Course** (or hit <kbd>Enter</kbd>) to add more courses.
+3. **Start the Automation:**
+   - Click **🚀 Start Automation**.
+   - A Chrome browser window will open.
+   - When Cloudflare shows a **"Verify you are human"** checkbox, the dashboard will flash an alert. Switch to the Chrome window and click the checkbox.
+   - As soon as verified, the bot will automatically resume and monitor course availability!
+4. **Stopping:**
+   - Click **⏹️ Stop** anytime to pause or quit.
 
 ---
 
-## 🔒 Privacy & Security
+## ❓ Frequently Asked Questions (Troubleshooting)
 
-Your Roll Number and Password are saved only on your local machine in `.env`. They are never sent to external servers or logged in Git.
+**Q: 'python' is not recognized on Windows?**  
+**A:** Reinstall Python from [python.org](https://www.python.org/downloads/) and make sure to check the box **"Add Python to PATH"** during installation.
 
+**Q: Permission denied when running `./run.sh` on Mac?**  
+**A:** Run `chmod +x run.sh` once in your terminal, then try `./run.sh` again, or simply run `python3 start.py`.
+
+**Q: Are my password and roll number safe?**  
+**A:** Yes. Your credentials stay strictly on your local machine in `.env` and are never shared or uploaded anywhere.
